@@ -64,9 +64,9 @@ void StateMachine::StateEngine(void)
         (this->*pStateMap[currentState].pStateFunc)(pDataTemp);
  
         // if event data was used, then delete it
-        if (pDataTemp) {
+        /*if (pDataTemp) {
             delete pDataTemp;
             pDataTemp = NULL;
-        }
+        }*/
     }
 }

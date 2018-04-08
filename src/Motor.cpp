@@ -28,6 +28,10 @@ void Motor::SetSpeed(MotorData* pData)
     END_TRANSITION_MAP(pData)
 }
 
+void Motor::SetDirection(MotorData* pData) {
+	cout << "Motor::SetDirection: " << pData->direction << endl;
+}
+
 // state machine sits here when motor is not running
 void Motor::ST_Idle(EventData* pData) 
 {
@@ -47,13 +51,13 @@ void Motor::ST_Stop(EventData* pData)
 // start the motor going
 void Motor::ST_Start(MotorData* pData)
 {
-	cout << "Motor::ST_Start" << endl;
+	cout << "Motor::ST_Start: " << pData->speed << endl;
     // set initial motor speed processing here
 }
 
 // changes the motor speed once the motor is moving
 void Motor::ST_ChangeSpeed(MotorData* pData)
 {
-	cout << "Motor::ST_ChangeSpeed" << endl;
+	cout << "Motor::ST_ChangeSpeed: "  << pData->speed  << endl;
     // perform the change motor speed to pData->speed here
 }

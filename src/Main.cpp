@@ -11,16 +11,26 @@
 int main(void)
 {
 	Motor motor;
-
 	MotorData* data = new MotorData();
+
+	data->direction = 0;
+	motor.SetDirection(data);
+
 	data->speed = 100;
 	motor.SetSpeed(data);
 
-	MotorData* data2 = new MotorData();
-	data2->speed = 200;
-	motor.SetSpeed(data2);
+	data->speed = 150;
+	motor.SetSpeed(data);
 
 	motor.Halt();
+
+	data->direction = 1;
+	motor.SetDirection(data);
+
+	//MotorData* data2 = new MotorData();
+	data->speed = 200;
+	motor.SetSpeed(data);
+
 	motor.Halt();
 
 	return 0;

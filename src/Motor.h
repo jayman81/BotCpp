@@ -6,6 +6,7 @@
 struct MotorData : public EventData
 {
     int speed;
+    int direction;
 };
 
 // the Motor state machine class
@@ -17,6 +18,7 @@ public:
     // external events taken by this state machine
     void Halt();
     void SetSpeed(MotorData*);
+    void SetDirection(MotorData*);
 private:
     // state machine state functions
     void ST_Idle(EventData*);
